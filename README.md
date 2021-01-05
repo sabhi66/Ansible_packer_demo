@@ -25,13 +25,15 @@ Create an AWS EC2 Instance from our custom built image using packer from a base 
 ## Setup
 These Installation steps are for only Ubuntu 18.04.5 LTS but links for setup on Differesnt OS are given below.
 
-###Python
-
+### Python
+```
 [Install Python3 on Ubuntu](https://www.knowledgehut.com/blog/data-science/install-python-on-ubuntu)
-[Install Python3 on RHEL](https://developers.redhat.com/blog/2018/08/13/install-python3-rhel/)
-[Install Python3 on MacOS](https://www.dummies.com/programming/python/how-to-install-python-on-a-mac/)
 
-###Ansible
+[Install Python3 on RHEL](https://developers.redhat.com/blog/2018/08/13/install-python3-rhel/)
+
+[Install Python3 on MacOS](https://www.dummies.com/programming/python/how-to-install-python-on-a-mac/)
+```
+### Ansible
 
 The following steps are to Install Ansible on Ubuntu 18.04.5 LTS
 
@@ -42,7 +44,7 @@ sudo apt install ansible
 
 [Install Ansible on Different OS](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 
-###Packer
+### Packer
 
 The following steps are to install Hashicorp Packer on Ubuntu 18.04.5 LTS
 

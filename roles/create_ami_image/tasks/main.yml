@@ -1,0 +1,50 @@
+---
+- name: Create a Directory 
+  file:
+    path: "{{ packer_demo }}"
+    state: directory
+
+- name: Copy ami_packer.json template to packer_demo Directory
+  template:
+    src:  "ami_packer.json.j2"
+    dest: "{{ packer_demo }}/ami_packer.json"
+    mode: '0644'
+
+- name: Copy install_nginx.yml file
+  copy:
+    src: install_nginx.yml
+    dest: "{{ packer_demo }}/"
+    mode: '0644'
+
+- name: Create file/static_website Directory
+  file:
+    path: "{{ packer_demo }}/files/static_website"
+    state: directory
+    recurse: yes
+
+- name: Copy index.html to {{ packer_demo }}/files/static_website 
+  copy:
+    src: index.html
+    dest: "{{ packer_demo }}/files/static_website/"
+
+- name: Build an AMI Image using packer
+  command: packer build ami_packer.json
+  register: packer_output
+  args:
+    chdir: "{{ packer_demo }}"
+
+- name: Copy packer_output to a file
+  copy:
+    content: "{{ packer_output.stdout }}"
+    dest: "{{ packer_demo }}/ami_packer_demooutput.txt"
+    mode: '0644'
+
+- name: Get AMI ID 
+  shell: cat "{{ packer_demo }}/ami_packer_demooutput.txt" | tail -1 | sed 's/^[^:]*:/:/' | sed 's/^[^:]*://' | sed 's/ //g' 
+  register: ami_id
+  args:
+    executable: /bin/bash
+
+- name: Set fact ami_id
+  set_fact:
+    ami_id:   "{{ ami_id.stdout }}"

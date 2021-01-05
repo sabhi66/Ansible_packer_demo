@@ -1,0 +1,10 @@
+---
+packer_demo:            "/home/devops/packer_demo"
+ami_storage:            "amazon-ebs"
+instance_type:          "t2.micro"
+ssh_user:               "ubuntu"
+ami_image_name:         "ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-20201026"
+root_device_type:       "ebs"
+image_owners:           "099720109477"
+virtualization_type:    "hvm"
+subnet_id:              "subnet-be2c73f3"

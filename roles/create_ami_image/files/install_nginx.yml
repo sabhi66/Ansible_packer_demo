@@ -1,0 +1,25 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install nginx latest version
+      apt: 
+        name: nginx 
+        state: latest
+
+    - name: start nginx
+      service:
+        name: nginx
+        state: started
+ 
+    - name: Upload website files
+      copy: 
+        src: "../files/static_website/" 
+        dest: "/var/www/html/"
+        mode: '0644'
+
+    - name: Allow all access to tcp port 80
+      ufw:
+        rule: allow
+        port: '80'
+        proto: tcp

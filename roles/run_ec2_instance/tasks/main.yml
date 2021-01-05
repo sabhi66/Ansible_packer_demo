@@ -1,0 +1,17 @@
+--- 
+- name: Build EC2 Instance with Packer created AMI IMAGE with id {{ ami_id }}
+  become_user: Terraform_ansible
+  ec2_instance:
+    name: "packer-built-ami-compute-instance"
+    key_name: "Terraform_ansible"
+    vpc_subnet_id: "{{ subnet_id }}"
+    instance_type: "{{ instance_type }}"
+    aws_access_key: "{{ aws_access_key_id }}"
+    aws_secret_key: "{{ aws_secret_access_key }}"
+    security_group: default
+    state: present
+    network:
+      assign_public_ip: true
+    image_id: "{{ ami_id }}"
+    tags:
+      Environment: Testing

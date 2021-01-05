@@ -1,0 +1,6 @@
+---
+- name: Create AMI Image in AWS using Packer and Creating EC2 Instance using packer created AMI Image
+  hosts: localhost
+  roles:
+    - role: create_ami_image
+    - role: run_ec2_instance 

@@ -1,0 +1,28 @@
+{
+    "builders": [{
+        "type":"{{ ami_storage }}",
+        "instance_type": "{{ instance_type }}",
+        "ssh_username": "{{ ssh_user }}",
+        "access_key": "{{ aws_access_key_id }}",
+        "secret_key": "{{ aws_secret_access_key }}",
+        "ami_name": "ubuntu-packer", 
+        "source_ami_filter": {
+          "filters": {
+            "virtualization-type": "{{ virtualization_type }}",
+            "name": "{{ ami_image_name }}",
+            "root-device-type": "{{ root_device_type }}"
+          },
+          "owners": ["{{ image_owners }}"],
+          "most_recent": true
+        }
+    }],
+  "provisioners": [{
+    "type": "ansible",
+    "playbook_file": "install_nginx.yml",
+    "extra_arguments": [
+      "--extra-vars", 
+      "ansible_python_interpreter=/usr/bin/python3",
+      "--verbose"
+    ]
+  }]
+}

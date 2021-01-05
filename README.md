@@ -26,16 +26,16 @@ Create an AWS EC2 Instance from our custom built image using packer from a base 
 These Installation steps are for only Ubuntu 18.04.5 LTS but links for setup on Differesnt OS are given below.
 
 ### Python
-![Install Python3 on Ubuntu](https://www.knowledgehut.com/blog/data-science/install-python-on-ubuntu)
+# ![Install Python3 on Ubuntu](https://www.knowledgehut.com/blog/data-science/install-python-on-ubuntu)
 
-![Install Python3 on RHEL](https://developers.redhat.com/blog/2018/08/13/install-python3-rhel/)
+# ![Install Python3 on RHEL](https://developers.redhat.com/blog/2018/08/13/install-python3-rhel/)
 
-![Install Python3 on MacOS](https://www.dummies.com/programming/python/how-to-install-python-on-a-mac/)
+# ![Install Python3 on MacOS](https://www.dummies.com/programming/python/how-to-install-python-on-a-mac/)
 
 ### Ansible
 
 The following steps are to Install Ansible on Ubuntu 18.04.5 LTS
-```
+```shell
 sudo apt update
 sudo apt install software-properties-common
 sudo apt-add-repository --yes --update ppa:ansible/ansible
@@ -48,17 +48,17 @@ sudo apt install ansible
 
 The following steps are to install Hashicorp Packer on Ubuntu 18.04.5 LTS
 
-```
+```shell
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 sudo apt-get update && sudo apt-get install packer
 ```
 
-![Install Packer on Different OS](https://learn.hashicorp.com/tutorials/packer/getting-started-install)
+# ![Install Packer on Different OS](https://learn.hashicorp.com/tutorials/packer/getting-started-install)
 
 
 ## Status
 Code is: _Working_ 
 
 ## Author
-Authored by [@abhi](starigopula43@gmail.com) - feel free to contact me!
+Authored by ![@abhi](starigopula43@gmail.com) - feel free to contact me!

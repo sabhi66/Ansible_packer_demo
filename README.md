@@ -35,27 +35,30 @@ These Installation steps are for only Ubuntu 18.04.5 LTS but links for setup on 
 ### Ansible
 
 The following steps are to Install Ansible on Ubuntu 18.04.5 LTS
-
+```
 sudo apt update
 sudo apt install software-properties-common
 sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible
+```
 
-[Install Ansible on Different OS](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
+![Install Ansible on Different OS](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 
 ### Packer
 
 The following steps are to install Hashicorp Packer on Ubuntu 18.04.5 LTS
 
+```
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 sudo apt-get update && sudo apt-get install packer
+```
 
-[Install Packer on Different OS](https://learn.hashicorp.com/tutorials/packer/getting-started-install)
+![Install Packer on Different OS](https://learn.hashicorp.com/tutorials/packer/getting-started-install)
 
 
 ## Status
 Code is: _Working_ 
 
-## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+## Author
+Authored by [@abhi](starigopula43@gmail.com) - feel free to contact me!

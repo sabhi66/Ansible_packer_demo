@@ -16,6 +16,8 @@ Create an AWS EC2 Instance from our custom built image using packer from a base 
 ## Screenshots
 ![Example screenshot](./img/ec2.PNG)
 
+![Example screenshot](./img/static_website.PNG)
+
 ## Technologies
 * Ubuntu  - version 18.04.5 LTS
 * Ansible - version 2.9.16

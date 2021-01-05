@@ -26,7 +26,7 @@ Create an AWS EC2 Instance from our custom built image using packer from a base 
 These Installation steps are for only Ubuntu 18.04.5 LTS but links for setup on Differesnt OS are given below.
 
 ### Python
-```
+```shell
 [Install Python3 on Ubuntu](https://www.knowledgehut.com/blog/data-science/install-python-on-ubuntu)
 
 [Install Python3 on RHEL](https://developers.redhat.com/blog/2018/08/13/install-python3-rhel/)

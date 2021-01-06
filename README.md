@@ -82,9 +82,11 @@ We have main playbook ec2_packer_terraform.yml and it consists of two roles
 
 ## Usage
 
+```shell
 ansible-playbook ec2_packer_terraform.yml -e "ansible_python_interpreter=/usr/bin/python3" --ask-vault-pass
-
-
+```
+# NOTE:
+I have Used Ansible Vault to encrypt secrets such as aws_access_key, aws_secret_key and Variables such as ami id etc will be different in your case. You may use Hashicorp vault or much more secure vaults in your production and based on that you can change above code and ansible-playbook command 
 
 ## Status
 Code is: _Working_ 

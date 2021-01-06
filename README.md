@@ -81,6 +81,10 @@ We have main playbook ec2_packer_terraform.yml and it consists of two roles
 ## Usage
 
 ```shell
+git clone git@github.com:sabhi66/Ansible_packer_demo.git
+
+cd Ansible_packer_demo
+
 ansible-playbook ec2_packer_terraform.yml -e "ansible_python_interpreter=/usr/bin/python3" --ask-vault-pass
 ```
 Once Completed goto AWS console and get EC2 Instance IP and copy paste in new browser tab you will see similar output

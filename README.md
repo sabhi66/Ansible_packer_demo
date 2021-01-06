@@ -6,6 +6,7 @@
 * [Screenshots](#screenshots)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [Description](#description)
 * [Usage](#usage)
 * [Status](#status)
 * [Contact](#contact)
@@ -57,6 +58,32 @@ sudo apt-get update && sudo apt-get install packer
 ```
 
 ### [Install Packer on Different OS](https://learn.hashicorp.com/tutorials/packer/getting-started-install)
+
+
+## Description
+
+We have main playbook ec2_packer_terraform.yml and it consists of two roles
+
+* create_ami_image
+  In this role we are creating a directory packer_demo to copy our scripts and yaml files.
+  ami_packer.json is our packer build file in Json which creates AMI Image and Provision  nginx using Ansible.
+  install_nginx.yml will provision nginx on our image
+  index.html is a sample static html webiste to host after configuring nginx
+
+* run_ec2_instance
+  In this role we are provisioning the ec2 instance form the image that we created using packer
+  We used ec2_instance ansible module to provision instance
+  
+* group_vars/all
+  In this directory we have vars.yml and secrets.yml file
+  All Variables are kept in vars.yml file
+  aws_access_key and aws_secret_key is kept in secrets.yml file and encrypted using ansible-vault
+
+
+## Usage
+
+ansible-playbook ec2_packer_terraform.yml -e "ansible_python_interpreter=/usr/bin/python3" --ask-vault-pass
+
 
 
 ## Status
